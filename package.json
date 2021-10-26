@@ -18,6 +18,7 @@
     "outdated": "npm outdated --depth 0",
     "pretest": "npm run lint",
     "start-dev": "nodemon --inspect server.js",
+    "dev": "nodemon --inspect server.js",
     "prestart-dev": "npm run lint",
     "migrations": "sequelize db:migrate",
     "start": "node server.js",

@@ -5,13 +5,9 @@ const config = require('../../config').common.weet;
 module.exports.getRandomWeet = function getRandomWeet() {
   return axios
     .get(`${config.url}/random`)
-
-    .then(res => {
-      logger.info('sending historical phrase random');
-      return res.data.data[0].quoteText;
-    })
+    .then(res => res.data.data[0].quoteText)
     .catch(error => {
       logger.error(error);
-      return error;
+      throw new Error('An error has occurred when trying to get a Weet');
     });
 };

@@ -20,7 +20,7 @@ exports.createUserSchema = {
       errorMessage: 'email invalid'
     },
     matches: {
-      options: [/@wolox.com\s*$/],
+      options: [/@(\.wolox\.com)|wolox\.(com(\.(ar|co|mx|con|cl)))?/],
       errorMessage: 'Invalid email domain'
     }
   },

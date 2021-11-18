@@ -1,6 +1,6 @@
 /* eslint-disable no-return-await */
 /* eslint-disable require-atomic-updates */
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const config = require('../../config').common.salt;
 
 const helpers = {};

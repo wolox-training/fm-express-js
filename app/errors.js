@@ -12,5 +12,5 @@ exports.defaultError = message => internalError(message, exports.DEFAULT_ERROR);
 exports.VALIDATION_ERROR = 'validation_error';
 exports.validationError = message => internalError(message, exports.VALIDATION_ERROR);
 
-exports.MAIL_EXIST_ERROR = 'validation_error';
-exports.mailExistError = message => internalError(message, exports.VALIDATION_ERROR);
+exports.MAIL_EXIST_ERROR = 'mail_exist_error';
+exports.mailExistError = message => internalError(message, exports.MAIL_EXIST_ERROR);

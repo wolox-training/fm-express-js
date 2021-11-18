@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const config = require('../../config').common.salt;
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
@@ -17,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   const encryptPassword = async userData => {
-    const salt = await bcrypt.genSalt(15);
+    const salt = await bcrypt.genSalt(config.roundsSalt);
     // eslint-disable-next-line require-atomic-updates
     userData.password = await bcrypt.hash(userData.password, salt);
     return userData;

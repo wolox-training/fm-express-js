@@ -8,7 +8,7 @@ exports.newUser = userData =>
     .catch(error => {
       if (error.name === 'SequelizeUniqueConstraintError') {
         logger.error('Existing email');
-        throw errors.mailExistError('Entered email already exists');
+        throw errors.mailExistError('User´s email already exists');
       }
       logger.error('Failed to connect to database');
       throw errors.databaseError(error);

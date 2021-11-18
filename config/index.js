@@ -47,6 +47,9 @@ const config = {
     },
     weet: {
       url: process.env.API_URL
+    },
+    salt: {
+      roundsSalt: process.env.SALT
     }
   }
 };

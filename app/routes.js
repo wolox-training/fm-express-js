@@ -5,5 +5,5 @@ const { createUserSchema } = require('./schemas/users');
 
 exports.init = app => {
   app.get('/health', healthCheck);
-  app.post('/new-user', validateSchemaAndFail(createUserSchema), newUser);
+  app.post('/user', validateSchemaAndFail(createUserSchema), newUser);
 };

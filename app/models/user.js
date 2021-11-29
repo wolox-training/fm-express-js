@@ -1,16 +1,23 @@
+const { encryptPassword } = require('../helpers/bcrypt');
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
-    'user',
+    'User',
     {
       id: { type: DataTypes.INTEGER, primaryKey: true, notNull: true, autoIncrement: true },
-      name: { type: DataTypes.STRING },
-      surname: { type: DataTypes.STRING },
+      firstName: { type: DataTypes.STRING },
+      lastName: { type: DataTypes.STRING },
       email: { type: DataTypes.STRING },
       password: { type: DataTypes.STRING }
     },
     {
-      timestamps: true
+      timestamps: true,
+      underscored: true
     }
   );
+
+  User.beforeCreate(encryptPassword);
+  User.beforeUpdate(encryptPassword);
+
   return User;
 };

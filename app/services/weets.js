@@ -1,5 +1,6 @@
 const axios = require('axios');
-const { logger } = require('express-wolox-logger');
+const logger = require('../logger');
+
 const config = require('../../config').common.weet;
 
 exports.getRandomWeet = () =>
